@@ -1,20 +1,60 @@
-// Lab 1.5.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
+/*
+    Done by :
+    Student Name : Artem Bereznii
+    Student Group : 123
+    Lab 1.5
+*/
+    
 #include <iostream>
+#include <cmath>
 
-int main()
-{
-    std::cout << "Hello World!\n";
+using namespace std;
+
+int main() {
+
+    //Task 1
+    {
+        int a1 = 6;
+        int b1 = 2;
+        int c1 = 7;
+        int d1 = 14;
+
+        // <скн1> (<скн2> (A<нб1>B) <акн> (<скн3> (C<нб2>D)))
+        //  empty (  !    (a1 == b1)    ^   (   !   (c1 != d1)))
+        bool res1 = (!(a1 == b1) ^ (!(c1 != d1)));
+        cout << "res1: " << boolalpha << res1 << endl;
+    }
+    
+    //Task 2
+    {
+        int a2 = 7;
+        int b2 = 7;
+        int c2 = 24;
+        int d2 = 1;
+
+        // <скн1> (<скн2> (A<нб1>B) <акн> (<скн3> (C<нб2>D)))
+        //  empty (  !    (a2 == b2)    ^   (   !   (c2 != d2)))
+        bool res2 = (!(a2 == b2) ^ (!(c2 != d2)));
+        cout << "res2: " << boolalpha << res2 << endl;
+    }
+
+    //Task 3
+    {
+        const int a3 = 356;
+        int b3 = 35;
+        float c3;
+        float* pc3;
+        pc3 = &c3;
+        *pc3 = 151.27;
+        //Literal 5
+        int e3 = 57;
+        float f3;
+
+        //((A <ан1> <сн> B) <юн1> <ян> C) <нб>( D <юн2>( E <ан2> <аЮГн> F))
+        // a3   |     ~  b3    /    *  pc3  >   5   +   e3  <<   sizeof f3 ;
+        bool res3 = ((a3 | ~b3) / *pc3) > (5 + (e3 << sizeof(f3)));
+        cout << "res3: " << boolalpha << res3 << endl;
+    }
+
+    return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
