@@ -1,0 +1,4 @@
+﻿  1.6.cpp
+C:\Users\Artem\source\repos\Uni-Work\labs\1.6\1.6.cpp(42,9): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Artem\source\repos\Uni-Work\labs\1.6\1.6.cpp(43,9): warning C4244: '=': conversion from 'unsigned short' to 'char', possible loss of data
+  1.6.vcxproj -> C:\Users\Artem\source\repos\Uni-Work\labs\1.6\x64\Debug\1.6.exe
