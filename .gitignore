@@ -9,5 +9,6 @@
 *.dylib
 main
 .vscode
-.vs/
-
+.vs
+.sln
+.vcxproj/
