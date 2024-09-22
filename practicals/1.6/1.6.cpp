@@ -19,30 +19,84 @@ void printVector(const std::vector<int>& vec) {
 
 int main()
 {
+    //Task 1
+    /*
     int n;
-    cout << "Enter the number of 0 and 1: ";
+    cout << "Enter any number ";
     cin >> n;
 
-    std::vector<int> a(n); // [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    std::vector<int> b(n);
+    int bitSize = sizeof(int) * 8;
+    int countOnes = 0;
+    int countZeros = 0;
+
+    for (int i = 0; i < bitSize; ++i) {
+        if (n & (1 << i)) {
+            countOnes++;  // Якщо біт дорівнює 1
+        }
+        else {
+            countZeros++; // Якщо біт дорівнює 0
+        }
+    }
+
+    cout << "Number of 1: " << countOnes << endl;
+    cout << "Number of 0: " << countZeros << endl;
+
+    if (countOnes > countZeros) {
+        cout << "More ones" << endl;
+    }
+    else if (countZeros > countOnes) {
+        cout << "More zeros" << endl;
+    }
+    else {
+        cout << "The number of ones and zeros is the same" << endl;
+    }
+    */
+    //Task 2
+    // Завдання:
+    // Задано дві послідовності, які складаються з 0 та 1.
+    // Скласти специфікацію для моделювання операцій XOR.
+
+    // Специфікація:
+
+    // Вхідні дані:
+    // - Дві послідовності бітів (A, B) однакової довжини.
+
+    // Алгоритм:
+    // 1. Пройти по кожному елементу послідовностей A і B.
+    // 2. Для кожного елемента обчислити результат операції XOR.
+    // 3. Зберегти результат в нову послідовність.
+
+    // Операції:
+    // - XOR: ri = ai XOR bi
+
+    // Вихідні дані:
+    // - Результуюча послідовність R.
+
+    int n;
+    cout << "Enter the length: ";
+    cin >> n;
+
+    vector<int> a(n); // [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    vector<int> b(n);
 
     for (int i = 0; i < n; i++) {
         a[i] = rand() % 2;
         b[i] = rand() % 2;
     }
 
-    std::cout << "A  : ";
+    cout << "A  : ";
     printVector(a);
-    std::cout << "B  : ";
+    cout << "B  : ";
     printVector(b);
 
+    vector<int> r_xor(n);
+
     for (int i = 0; i < n; i++) {
-
-        int a_count;
-        int b_count;
-
-        if (a_bit != b_bit) {
-            return false;
-        }
+        r_xor[i] = a[i] ^ b[i];
     }
+
+    cout << "XOR: ";
+    printVector(r_xor);
+
+    return 0;
 }
