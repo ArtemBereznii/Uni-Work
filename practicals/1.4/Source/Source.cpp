@@ -15,17 +15,17 @@ int main()
     cout << "Enter the denominator: ";
     cin >> denom;
 
-    int secondElem = 1;
-
-    int sum = 0;
+    int currentElem = firstElem;
+    int sum = firstElem;
 
     for (int i = 1; i < numElem; i++) {
-        secondElem = firstElem * denom;
-        firstElem = secondElem;
-        sum = firstElem + secondElem;
+        currentElem *= denom; 
+        sum += currentElem;   
     }
 
     double average = static_cast<double>(sum) / numElem;
 
-    cout << "Average of elemnts is: " << average << endl;
+    cout << "Average of elements is: " << average << endl;
+
+    return 0;
 }
