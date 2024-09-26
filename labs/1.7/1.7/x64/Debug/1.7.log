@@ -1,3 +1,0 @@
-﻿  1.7.cpp
-C:\Users\Artem\source\repos\Uni-Work\labs\1.7\1.7.cpp(30,6): warning C4326: return type of 'main' should be 'int' instead of 'void'
-  1.7.vcxproj -> C:\Users\Artem\source\repos\Uni-Work\labs\1.7\x64\Debug\1.7.exe
