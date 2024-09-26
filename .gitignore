@@ -8,7 +8,10 @@
 *.so
 *.dylib
 main
-.vscode
-.vs
-.sln
-.vcxproj
+*.vscode
+*.vs
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+x64/
