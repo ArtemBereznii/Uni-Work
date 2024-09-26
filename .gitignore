@@ -7,7 +7,6 @@
 *.dylib
 *.so
 *.dylib
-main
 .vscode
 .vs
 .sln
