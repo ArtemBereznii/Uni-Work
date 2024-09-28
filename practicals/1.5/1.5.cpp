@@ -17,9 +17,12 @@ void initRandomizer() {
 }
 
 int main() {
+    int task;
+    cout << "Enter the task (1-3) you want to run : ";
+    cin >> task;
     // Task 1. Задано послідовність значень А[n] і деяке значення P. Знайти індекс
     // першого входження Р у послідовність А[n].
-    /*
+    if (task == 1)
     {
         initRandomizer();
 
@@ -53,16 +56,18 @@ int main() {
         }
         if (index != -1) {
             cout << "The index of " << target << " is " << index << endl;
-        } else {
+        }
+        else {
             cout << "The number " << target << " isn`t located in array" << endl;
         }
-        
-        delete arr;
 
-        */
+        delete arr;
+    }
+    else if (task == 2) {
+
         // Task 2. Задано послідовність значень А[n]. Знайти найменше значення серед
         // додатних елементів послідовності А[n].
-        /*
+
         initRandomizer();
 
         int n;
@@ -89,14 +94,13 @@ int main() {
         }
 
         cout << "The minimum value in the sequence is: " << min << endl;
-        
-        delete arr;
-        */
 
+        delete arr;
+       
+    } else if (task == 3) {
         // Task 3. Задано послідовність значень А[n]. Знайти найбільше і найменше
         // значення та поміняти їх місцями.
-    /*
-    {
+    
         initRandomizer();
 
         int n;
@@ -151,8 +155,9 @@ int main() {
 
         delete[] arr;
         arr = nullptr;
-        */
+    }
+    else {
+        cout << "The task doesn`t exist. Try task 1-3.";
     }
     
-    return 0;
 }   
