@@ -57,25 +57,25 @@ int main() {
     }
     else if (task == 2) {
         //Task 2
-        // Завдання:
-        // Задано дві послідовності, які складаються з 0 та 1.
-        // Скласти специфікацію для моделювання операцій XOR.
+        // Task:
+        // Given two sequences consisting of 0 and 1.
+        // Create a specification for modeling XOR operations.
 
-        // Специфікація:
+        // Specification:
 
-        // Вхідні дані:
-        // - Дві послідовності бітів (A, B) однакової довжини.
+        // Input:
+        // - Two sequences of bits (A, B) of equal length.
 
-        // Алгоритм:
-        // 1. Пройти по кожному елементу послідовностей A і B.
-        // 2. Для кожного елемента обчислити результат операції XOR.
-        // 3. Зберегти результат в нову послідовність.
+        // Algorithm:
+        // 1. Go through each element of sequences A and B.
+        // 2. For each element, calculate the result of the XOR operation.
+        // 3. Save the result to a new sequence.
 
-        // Операції:
-        // - XOR: ri = ai XOR bi
+        // Operations:
+        // - XOR: ri = ai XOR bi.
 
-        // Вихідні дані:
-        // - Результуюча послідовність R.
+        // Input data:
+        // - The resulting sequence R.
 
         int n;
         cout << "Enter the length: ";
