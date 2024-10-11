@@ -31,29 +31,37 @@ int performOperation(char operation, int operand1, int operand2) {
     }
 }
 
-// Function to convert an infix expression to postfix
 string infixToPostfix(const string& expression) {
-    stack<char> operators; // Stack for operators
-    stringstream postfix;  // Resulting postfix expression
+    stack<char> operators;
+    stringstream postfix; 
+    string number;
 
-    for (char c : expression) {
-        // If character is a digit, add it to the postfix string
+    for (size_t i = 0; i < expression.length(); ++i) {
+        char c = expression[i];
+
         if (isdigit(c)) {
-            postfix << c << ' ';
+            number += c;
         }
-        // If character is an operator
-        else if (c == '+' || c == '-' || c == '*' || c == '/') {
-            // Pop operators from the stack to the result while they have higher or equal precedence
-            while (!operators.empty() && precedence(operators.top()) >= precedence(c)) {
-                postfix << operators.top() << ' ';
-                operators.pop();
+        else {
+            if (!number.empty()) {
+                postfix << number << ' ';
+                number.clear();
             }
-            operators.push(c);  // Push current operator to stack
+
+            if (c == '+' || c == '-' || c == '*' || c == '/') {
+                while (!operators.empty() && precedence(operators.top()) >= precedence(c)) {
+                    postfix << operators.top() << ' ';
+                    operators.pop();
+                }
+                operators.push(c);
+            }
         }
-        // Ignore spaces or invalid characters
     }
 
-    // Pop all remaining operators from the stack to the result
+    if (!number.empty()) {
+        postfix << number << ' ';
+    }
+
     while (!operators.empty()) {
         postfix << operators.top() << ' ';
         operators.pop();
@@ -62,30 +70,26 @@ string infixToPostfix(const string& expression) {
     return postfix.str();
 }
 
-// Function to evaluate a postfix expression
 int evaluatePostfix(const string& expression) {
-    stack<int> operands; // Stack for operands
+    stack<int> operands;
     stringstream stream(expression);
     string token;
 
     while (stream >> token) {
         if (isdigit(token[0])) {
-            // If the token is a number, push it to the operand stack
             operands.push(stoi(token));
         }
         else {
-            // If the token is an operator, pop two operands and perform the operation
             if (operands.size() < 2) {
                 throw invalid_argument("Invalid expression");
             }
             int operand2 = operands.top(); operands.pop();
             int operand1 = operands.top(); operands.pop();
             int result = performOperation(token[0], operand1, operand2);
-            operands.push(result);  // Push the result back to the stack
+            operands.push(result);
         }
     }
 
-    // The final result should be the only element in the stack
     if (operands.size() != 1) {
         throw invalid_argument("Invalid postfix expression");
     }
@@ -96,7 +100,7 @@ int evaluatePostfix(const string& expression) {
 int main() {
     try {
         string infix;
-        cout << "Enter a valid infix expression (e.g., 3+5*2): ";
+        cout << "Enter a valid infix expression (e.g., 10+15*2): ";
         getline(cin, infix);
 
         string postfix = infixToPostfix(infix);
